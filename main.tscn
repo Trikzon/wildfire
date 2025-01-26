@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://hk5ypjr8w1sh"]
+
+[ext_resource type="PackedScene" uid="uid://c76irbyd844o3" path="res://cards/card_3d.tscn" id="1_a1hkh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3mqb8"]
+
+[sub_resource type="Sky" id="Sky_6xkod"]
+sky_material = SubResource("ProceduralSkyMaterial_3mqb8")
+
+[sub_resource type="Environment" id="Environment_3b0wp"]
+background_mode = 2
+sky = SubResource("Sky_6xkod")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_20671"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3b0wp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33502, 4.61691)
+
+[node name="Card3D" parent="." instance=ExtResource("1_a1hkh")]
+texture = SubResource("ViewportTexture_20671")

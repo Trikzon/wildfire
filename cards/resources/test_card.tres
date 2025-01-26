@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://dvpwe8r6jo5mt"]
+
+[ext_resource type="Script" path="res://cards/resources/card.gd" id="1_8ojgh"]
+
+[resource]
+script = ExtResource("1_8ojgh")
+name = "Test Card"
+description = "This is a debug card that does nothing."
+cost = 2

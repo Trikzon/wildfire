@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c76irbyd844o3"]
+
+[ext_resource type="PackedScene" uid="uid://qyactp3qm5bt" path="res://cards/card_2d.tscn" id="1_uvjjk"]
+[ext_resource type="Script" path="res://cards/card_3d.gd" id="1_yuos6"]
+[ext_resource type="Resource" uid="uid://dvpwe8r6jo5mt" path="res://cards/resources/test_card.tres" id="2_ih8hl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8b7ir"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Card3D" type="Sprite3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = SubResource("ViewportTexture_8b7ir")
+script = ExtResource("1_yuos6")
+card = ExtResource("2_ih8hl")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+disable_3d = true
+snap_2d_transforms_to_pixel = true
+size = Vector2i(869, 1213)
+render_target_update_mode = 1
+
+[node name="Card2D" parent="SubViewport" instance=ExtResource("1_uvjjk")]
+unique_name_in_owner = true
+anchors_preset = 0

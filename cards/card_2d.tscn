@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://qyactp3qm5bt"]
+
+[ext_resource type="Texture2D" uid="uid://c2gnnp38ovxi7" path="res://cards/card_background.png" id="1_stqv0"]
+[ext_resource type="Script" path="res://cards/card_2d.gd" id="2_gga1i"]
+[ext_resource type="Theme" uid="uid://dbja7op7i52oh" path="res://themes/theme.tres" id="2_pcqf3"]
+[ext_resource type="FontFile" uid="uid://bvvrrw5f453ko" path="res://themes/komika.hand-italic.ttf" id="3_ofnh3"]
+
+[node name="Card2D" type="TextureRect"]
+anchors_preset = -1
+texture = ExtResource("1_stqv0")
+script = ExtResource("2_gga1i")
+
+[node name="NameLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 90.0
+offset_top = 40.0
+offset_right = 605.0
+offset_bottom = 158.0
+theme = ExtResource("2_pcqf3")
+theme_override_fonts/font = ExtResource("3_ofnh3")
+theme_override_font_sizes/font_size = 72
+text = "Explosion"
+uppercase = true
+
+[node name="DescriptionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 120.0
+offset_top = 770.0
+offset_right = 745.0
+offset_bottom = 1075.0
+theme = ExtResource("2_pcqf3")
+theme_override_font_sizes/font_size = 42
+text = "While this card is active, every basic attack is of specialization explosion and deals 2–6 damage."
+autowrap_mode = 3
+uppercase = true
+
+[node name="CostLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 635.0
+offset_top = 1080.0
+offset_right = -104.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_pcqf3")
+theme_override_font_sizes/font_size = 28
+text = "Cost: 2"
+vertical_alignment = 1

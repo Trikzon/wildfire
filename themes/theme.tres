@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbja7op7i52oh"]
+
+[ext_resource type="FontFile" uid="uid://xbmou1sdqb0d" path="res://themes/komika.hand.ttf" id="1_j1ern"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_j1ern")
