@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://wctaj3703wnn"]
+
+[ext_resource type="ArrayMesh" uid="uid://xxfpwogeats1" path="res://vfx/1LightningEditable1.tres" id="1_t0mqs"]
+
+[sub_resource type="Gradient" id="Gradient_fm7aj"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vspaw"]
+gradient = SubResource("Gradient_fm7aj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_flbqs"]
+lifetime_randomness = 0.1
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(4, 0, 4)
+angle_min = -180.0
+angle_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_vspaw")
+
+[node name="LightningVFX" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.999987, -0.00498879, -0.00113621, 0.00498899, 0.999988, 0.000170455, 0.00113535, -0.000176126, 0.999999, 0, 0, 0)
+amount = 2
+lifetime = 0.25
+process_material = SubResource("ParticleProcessMaterial_flbqs")
+draw_pass_1 = ExtResource("1_t0mqs")
